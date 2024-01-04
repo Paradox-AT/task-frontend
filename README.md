@@ -1,27 +1,44 @@
-# TodoFrontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.8.
+# Task App
 
-## Development server
+This app can be used to create and assign tasks on etherium blockchain
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Deployment
 
-## Code scaffolding
+In order to deploy this application you'd need a working docker env. Blockchain part of the application is already deployed on ethereum sepolia testnet at address: `0x37E0aAEd8BD206D39cd0d92Dc5Fa91AaeadF3239`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```bash
+  sudo docker sudo docker build -t task-frontend .   
+  sudo docker run -d -p 8080:80 task-frontend
+```
 
-## Build
+This will build the docker images and run the application.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Run Locally
 
-## Running end-to-end tests
+Clone the project
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```bash
+  git clone https://link-to-project
+```
 
-## Further help
+Go to the project directory
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```bash
+  cd task-frontend
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npx ng serve
+```
+

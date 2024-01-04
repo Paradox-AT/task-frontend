@@ -1,0 +1,15 @@
+.header-spacer {
+    flex: 1 1 auto;
+}
+
+.task-input{
+    padding: 2%;
+}
+
+.form{
+    display: flex;
+}
+
+.add-task{ 
+    max-width: fit-content;
+}

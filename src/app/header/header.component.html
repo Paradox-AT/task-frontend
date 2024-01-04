@@ -1,0 +1,26 @@
+<div class="task-header">
+    <mat-toolbar color="primary">
+        <span>Task App</span>
+        <span class="header-spacer"></span>
+        <button mat-icon-button aria-label="Metamask wallet" (click)="connectMetamask()">
+            <mat-icon *ngIf="!walletConnected">account_balance_wallet</mat-icon>
+            <mat-icon color="accent" *ngIf="walletConnected">account_balance_wallet</mat-icon>
+        </button>
+    </mat-toolbar>
+    <mat-card class="task-input">
+        <form [formGroup]="taskDetails" (submit)="createTask()" style="display: contents;">
+            <mat-form-field>
+                <mat-label>Title</mat-label>
+                <input matInput formControlName="title"/>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Description</mat-label>
+                <textarea matInput formControlName="description"></textarea>
+            </mat-form-field>
+            <button mat-stroked-button class="add-task" aria-label="Metamask wallet" type="submit"
+                [disabled]="!taskDetails.valid">
+                Create <mat-icon>add</mat-icon>
+            </button>
+        </form>
+    </mat-card>
+</div>

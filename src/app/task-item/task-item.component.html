@@ -1,0 +1,32 @@
+<mat-accordion>
+    <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+            <mat-icon *ngIf="!task.status">check_circle_outline</mat-icon>
+            <mat-icon color="accent" *ngIf="task.status">check_circle_outline</mat-icon>
+            <mat-panel-title>ID:&emsp;{{task.id}}</mat-panel-title>
+            <mat-panel-description>Title:&emsp;{{task.title}}</mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-panel-title>ID:
+            <mat-panel-description>&emsp;{{task.id}}</mat-panel-description></mat-panel-title>
+        <mat-panel-title>Title:
+            <mat-panel-description>&emsp;{{task.title}}</mat-panel-description></mat-panel-title>
+        <mat-panel-title>Description:
+            <mat-panel-description>&emsp;{{task.description}}</mat-panel-description></mat-panel-title>
+        <mat-panel-title>Status:
+            <mat-panel-description *ngIf="!task.status">&emsp;Pending
+                <button mat-button aria-label="Mark task as completed" (click)="markTaskCompleted()" *ngIf="task.assignedUser">Mark
+                    Completed</button>
+            </mat-panel-description>
+            <mat-panel-description *ngIf="task.status">&emsp;Completed</mat-panel-description>
+        </mat-panel-title>
+        <mat-panel-title>Assigned User:
+            <mat-panel-description>&emsp;{{task.assignedUser}}
+                <div *ngIf="!task.assignedUser">
+                    <input placeholder="User Address" [(ngModel)]="userAddress">
+                    <button mat-button aria-label="Assign User" (click)="assignUser()">Assign
+                        User</button>
+                </div>
+            </mat-panel-description>
+        </mat-panel-title>
+    </mat-expansion-panel>
+</mat-accordion>
